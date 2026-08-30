@@ -13,7 +13,7 @@ export const PROFILE = {
   location: 'Jönköping, Sweden',
   email: 'delovansulaiman4@gmail.com',
   cvFile: '/Delovan_Sulaiman_Software_Developer.pdf',
-  tagline: 'I build software people actually use — from AI prototypes to production mobile apps.',
+  tagline: 'I build software people actually use, from AI prototypes to production mobile apps.',
   summary: [
     "I'm a software developer with a degree in Software Development and Mobile Platforms from Jönköping University. Over the past year I've taken a project from an idea to a working AI prototype at Jönköping Energi, built mobile applications together with a professional development team, and worked as a licensed security officer alongside my studies.",
     'I write clean, maintainable code on both the frontend and the backend, I pick up new technologies quickly, and I enjoy the moment a difficult problem finally falls into place. I work just as well on my own as I do in a team, and I am looking for a role where I can keep building software that people actually use.',
@@ -86,9 +86,9 @@ export const SKILL_GROUPS: {
 export const FEATURED_PROJECT = {
   title: 'Object Detection in Industrial Environments Using AI',
   subtitle: "Bachelor's thesis, Jönköping University × Jönköping Energi",
-  period: 'Feb 2026 – Jun 2026',
+  period: 'Feb 2026 to Jun 2026',
   description:
-    'A solo-run computer vision project: built and evaluated an AI prototype that automatically identifies iron pipes, insulation, and pallets in photographs from a real industrial environment. I owned the full pipeline — collecting and annotating a dataset of roughly 800 images in Label Studio, training and comparing several YOLOv8 model sizes across different image resolutions and epoch counts, and building a dashboard where a photo can be uploaded and run through the model live.',
+    'A solo-run computer vision project: built and evaluated an AI prototype that automatically identifies iron pipes, insulation, and pallets in photographs from a real industrial environment. I owned the full pipeline: collecting and annotating a dataset of roughly 800 images in Label Studio, training and comparing several YOLOv8 model sizes across different image resolutions and epoch counts, and building a dashboard where a photo can be uploaded and run through the model live.',
   supervisors: 'Supervised by Jönköping University and Piroz Kristedt at Jönköping Energi.',
   metrics: [
     { value: '67.5%', label: 'Precision' },
@@ -113,21 +113,21 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: 'Security Officer (part-time)',
     org: 'Tempest AB',
     location: 'Jönköping',
-    period: 'Jan 2026 – Present',
+    period: 'Jan 2026 to Present',
     bullets: ['Licensed security officer, working alongside full-time studies.'],
   },
   {
     role: 'Security Officer',
     org: 'Avarn',
     location: 'Jönköping',
-    period: 'Jun 2025 – Dec 2025',
+    period: 'Jun 2025 to Dec 2025',
     bullets: ['Licensed security work requiring calm judgement and accountability under pressure.'],
   },
   {
     role: 'Programmer / App Developer',
     org: 'Jönköping Energi',
     location: 'Jönköping',
-    period: 'Jun 2025 – Jul 2025 · 5-week summer role',
+    period: 'Jun 2025 to Jul 2025 · 5-week summer role',
     bullets: [
       'Worked on the development of mobile applications and internal systems.',
       'Took part in programming, testing, and improving user interfaces.',
@@ -138,7 +138,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: 'Software Development Intern',
     org: 'Jönköping Energi',
     location: 'Jönköping',
-    period: 'Feb 2025 – May 2025',
+    period: 'Feb 2025 to May 2025',
     bullets: [
       'Contributed to both backend and frontend development of the Jönköping Energi customer app, used by real customers.',
       'Took part in team meetings and in the release of a new version of the app.',
@@ -148,19 +148,19 @@ export const EXPERIENCE: ExperienceItem[] = [
 ]
 
 export const EARLIER_BACKGROUND =
-  'Before moving into software, I spent several years in kitchen, home-care, and childcare roles during school and summer seasons (2017–2024) — including as a chef during peak restaurant seasons. That work is where I learned to stay calm, take responsibility, and deliver even when the pressure is on.'
+  'Before moving into software, I spent several years in kitchen, home-care, and childcare roles during school and summer seasons (2017 to 2024), including as a chef during peak restaurant seasons. That work is where I learned to stay calm, take responsibility, and deliver even when the pressure is on.'
 
 export const EDUCATION = [
   {
     school: 'Jönköping University',
     program: 'B.Sc. Software Development and Mobile Platforms',
-    period: 'Sep 2023 – Jun 2026',
+    period: 'Sep 2023 to Jun 2026',
     details: 'Android, iOS, Kotlin, HTML/CSS, C++, C, Python, Java',
   },
   {
     school: 'Alléskolan, Hallsberg',
     program: 'Natural Sciences programme',
-    period: '2019 – 2021',
+    period: '2019 to 2021',
     details: '',
   },
 ]
