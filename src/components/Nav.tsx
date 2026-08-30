@@ -4,6 +4,7 @@ import { PROFILE } from '../data/content'
 const LINKS = [
   { href: '#about', label: 'About' },
   { href: '#work', label: 'Work' },
+  { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ]

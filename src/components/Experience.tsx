@@ -6,7 +6,7 @@ export function Experience() {
   return (
     <section id="experience" className="px-6 py-24">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading eyebrow="04 · Path" title="Experience & education" />
+        <SectionHeading eyebrow="05 · Path" title="Experience & education" />
 
         <ol className="relative space-y-10 border-l border-border-soft pl-8">
           {EXPERIENCE.map((item, i) => (

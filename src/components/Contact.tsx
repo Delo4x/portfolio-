@@ -5,7 +5,7 @@ export function Contact() {
   return (
     <section id="contact" className="px-6 py-24">
       <Reveal className="mx-auto max-w-2xl rounded-3xl border border-border-soft bg-surface px-8 py-14 text-center sm:px-14">
-        <p className="mb-3 font-mono text-sm text-accent">05 · Contact</p>
+        <p className="mb-3 font-mono text-sm text-accent">06 · Contact</p>
         <h2 className="text-3xl font-semibold text-heading sm:text-4xl">
           Let's build something together
         </h2>
