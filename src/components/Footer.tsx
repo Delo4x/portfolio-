@@ -7,7 +7,7 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {PROFILE.name}
         </p>
-        <p>Built with React, Tailwind CSS & Framer Motion.</p>
+        
       </div>
     </footer>
   )
