@@ -66,7 +66,7 @@ export const SKILL_GROUPS: {
   {
     title: 'AI & Computer Vision',
     items: [
-      { name: 'YOLOv8' },
+      { name: 'YOLO26' },
       { name: 'Dataset annotation (Label Studio)' },
       { name: 'Model evaluation (precision / recall / mAP)' },
       { name: 'Applied ML dashboards' },
@@ -88,7 +88,7 @@ export const FEATURED_PROJECT = {
   subtitle: "Bachelor's thesis, Jönköping University × Jönköping Energi",
   period: 'Feb 2026 to Jun 2026',
   description:
-    'A solo-run computer vision project: built and evaluated an AI prototype that automatically identifies iron pipes, insulation, and pallets in photographs from a real industrial environment. I owned the full pipeline: collecting and annotating a dataset of roughly 800 images in Label Studio, training and comparing several YOLOv8 model sizes across different image resolutions and epoch counts, and building a dashboard where a photo can be uploaded and run through the model live.',
+    'A solo-run computer vision project: built and evaluated an AI prototype that automatically identifies iron pipes, insulation, and pallets in photographs from a real industrial environment. I owned the full pipeline: collecting and annotating a dataset of roughly 800 images in Label Studio, training and comparing several YOLO26 model sizes across different image resolutions and epoch counts, and building a dashboard where a photo can be uploaded and run through the model live.',
   supervisors: 'Supervised by Jönköping University and Piroz Kristedt at Jönköping Energi.',
   metrics: [
     { value: '67.5%', label: 'Precision' },
@@ -96,8 +96,8 @@ export const FEATURED_PROJECT = {
     { value: '55.5%', label: 'mAP@0.5' },
     { value: '5.5ms', label: 'Inference time' },
   ],
-  config: 'Best configuration: YOLOv8s · 840px input · 150 epochs',
-  tags: ['Python', 'YOLOv8', 'Computer Vision', 'Label Studio', 'Dashboard'],
+  config: 'Best configuration: YOLO26s · 840px input · 150 epochs',
+  tags: ['Python', 'YOLO26', 'Computer Vision', 'Label Studio', 'Dashboard'],
 }
 
 export type ExperienceItem = {
