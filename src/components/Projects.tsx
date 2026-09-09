@@ -9,41 +9,34 @@ export function Projects() {
   const [active, setActive] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="px-6 py-24">
-      <div className="mx-auto max-w-4xl">
+    <section id="projects" className="section">
+      <div className="section__inner section__inner--wide">
         <SectionHeading
           eyebrow="04 · Projects"
           title="Things I've built"
           description="A mix of course work and personal projects. Open one for screenshots and detail, or jump straight to the code."
         />
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="project-grid">
           {PROJECTS.map((project, i) => (
             <Reveal key={project.slug} delay={i * 0.05}>
-              <button
-                type="button"
-                onClick={() => setActive(project)}
-                className="flex h-full w-full flex-col rounded-3xl border border-border-soft bg-surface p-6 text-left transition-colors hover:border-accent"
-              >
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="text-lg font-semibold text-heading">{project.title}</h3>
-                  <span className="shrink-0 font-mono text-xs text-accent-2">{project.period}</span>
+              <button type="button" className="project-card" onClick={() => setActive(project)}>
+                <div className="project-card__head">
+                  <h3 className="project-card__title">{project.title}</h3>
+                  <span className="project-card__period">{project.period}</span>
                 </div>
 
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">{project.tagline}</p>
+                <p className="project-card__tagline">{project.tagline}</p>
 
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className="project-card__tags">
                   {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border-soft bg-bg-soft px-2.5 py-0.5 text-xs text-text-muted"
-                    >
+                    <span key={t} className="tag">
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <span className="mt-5 pt-1 font-mono text-xs text-accent">View details →</span>
+                <span className="project-card__more">View details →</span>
               </button>
             </Reveal>
           ))}
@@ -70,75 +63,57 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
   return (
     <motion.div
-      className="fixed inset-0 z-60 flex items-start justify-center overflow-y-auto bg-bg/80 p-4 backdrop-blur sm:p-8"
+      className="modal"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
     >
       <motion.div
-        className="my-auto w-full max-w-2xl rounded-3xl border border-border-soft bg-surface p-7 sm:p-9"
+        className="modal__panel"
         initial={{ opacity: 0, y: 24, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 24, scale: 0.98 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4">
+        <div className="modal__head">
           <div>
-            <p className="font-mono text-xs text-accent-2">{project.period}</p>
-            <h3 className="mt-1 text-2xl font-semibold text-heading">{project.title}</h3>
+            <p className="modal__period">{project.period}</p>
+            <h3 className="modal__title">{project.title}</h3>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded-full border border-border-soft px-3 py-1 text-sm text-text-muted transition-colors hover:text-heading"
-          >
+          <button type="button" className="modal__close" onClick={onClose} aria-label="Close">
             Close
           </button>
         </div>
 
         <Gallery images={project.images} title={project.title} />
 
-        <p className="mt-6 leading-relaxed text-text">{project.description}</p>
+        <p className="modal__desc">{project.description}</p>
 
-        <ul className="mt-5 space-y-2">
+        <ul className="modal__points">
           {project.highlights.map((h) => (
-            <li key={h} className="flex gap-2.5 text-sm text-text-muted">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+            <li key={h} className="modal__point">
+              <span className="modal__point-dot" />
               {h}
             </li>
           ))}
         </ul>
 
-        <div className="mt-6 flex flex-wrap gap-1.5">
+        <div className="modal__tags">
           {project.tech.map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-border-soft bg-bg-soft px-2.5 py-0.5 text-xs text-text-muted"
-            >
+            <span key={t} className="tag">
               {t}
             </span>
           ))}
         </div>
 
-        <div className="mt-7 flex items-center gap-3">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-heading px-5 py-2 text-sm font-medium text-bg transition-transform hover:scale-[1.03]"
-          >
+        <div className="modal__actions">
+          <a href={project.github} target="_blank" rel="noreferrer" className="btn btn--primary">
             GitHub
           </a>
           {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-border-soft px-5 py-2 text-sm text-text transition-colors hover:border-accent hover:text-heading"
-            >
+            <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn--ghost">
               Live demo
             </a>
           )}
@@ -150,28 +125,23 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
 function Gallery({ images, title }: { images: string[]; title: string }) {
   const [broken, setBroken] = useState<Record<string, boolean>>({})
-  const shown = images.filter((src) => !broken[src])
+  const hasVisible = images.some((src) => !broken[src])
 
-  if (shown.length === 0) {
-    return (
-      <div className="mt-6 flex h-40 items-center justify-center rounded-2xl border border-dashed border-border-soft bg-bg-soft text-sm text-text-muted">
-        Screenshots coming soon
-      </div>
-    )
+  if (!hasVisible) {
+    return <div className="gallery--empty">Screenshots coming soon</div>
   }
 
   return (
-    <div className="mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2">
+    <div className="gallery">
       {images.map((src) => (
         <img
           key={src}
           src={src}
           alt={`${title} screenshot`}
           loading="lazy"
+          hidden={broken[src]}
           onError={() => setBroken((b) => ({ ...b, [src]: true }))}
-          className={`h-56 w-auto shrink-0 snap-start rounded-2xl border border-border-soft object-cover ${
-            broken[src] ? 'hidden' : ''
-          }`}
+          className="gallery__img"
         />
       ))}
     </div>
