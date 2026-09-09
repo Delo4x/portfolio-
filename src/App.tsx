@@ -10,7 +10,7 @@ import { Skills } from './components/Skills'
 
 function App() {
   return (
-    <div className="min-h-svh bg-bg">
+    <div className="app">
       <Nav />
       <main>
         <Hero />

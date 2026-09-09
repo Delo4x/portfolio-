@@ -4,6 +4,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.app {
+  min-height: 100svh;
+  background: var(--color-bg);
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-text);
