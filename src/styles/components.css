@@ -106,6 +106,70 @@
   color: var(--color-heading);
 }
 
+/* --- Site header / nav ---------------------------------------- */
+
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+.site-header--scrolled {
+  border-bottom-color: var(--color-border);
+  background: rgba(10, 11, 15, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+  max-width: 64rem;
+  padding: 1rem 1.5rem;
+}
+.site-nav__brand {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-heading);
+}
+.site-nav__links {
+  display: none;
+  gap: 2rem;
+}
+.site-nav__link {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+.site-nav__link:hover {
+  color: var(--color-heading);
+}
+.site-nav__cta {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.site-nav__cta:hover {
+  border-color: var(--color-accent);
+  color: var(--color-heading);
+}
+
+@media (min-width: 640px) {
+  .site-nav__links {
+    display: flex;
+  }
+}
+
 /* --- Hero ------------------------------------------------------- */
 
 .hero {
