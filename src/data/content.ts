@@ -21,9 +21,8 @@ export const PROFILE = {
 }
 
 export const STATS = [
-  { value: '67.5%', label: 'Precision on final thesis model' },
-  { value: '~800', label: 'Images collected & annotated' },
-  { value: '5.5ms', label: 'Model inference time' },
+  { value: '2026', label: 'Graduating, B.Sc. Software Development' },
+  { value: '2', label: 'Developer roles at Jönköping Energi' },
   { value: '5', label: 'Languages spoken' },
 ]
 

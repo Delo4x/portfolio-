@@ -83,7 +83,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.32 }}
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-6 border-t border-border-soft pt-10 sm:grid-cols-4"
+          className="mx-auto mt-16 grid max-w-xl grid-cols-1 gap-6 border-t border-border-soft pt-10 sm:grid-cols-3"
         >
           {STATS.map((stat) => (
             <div key={stat.label}>
