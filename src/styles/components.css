@@ -1,0 +1,107 @@
+/* -------------------------------------------------------------------------
+   Component styles.
+
+   Shared building blocks come first, then the section-specific rules in the
+   order the sections appear on the page. Class names follow a loose
+   block__element--modifier convention.
+   ------------------------------------------------------------------------- */
+
+/* --- Shared: section shell --------------------------------------------- */
+
+.section {
+  padding: 6rem 1.5rem;
+}
+
+.section__inner {
+  margin-inline: auto;
+  max-width: 48rem;
+}
+.section__inner--wide {
+  max-width: 56rem;
+}
+.section__inner--narrow {
+  max-width: 42rem;
+}
+
+/* --- Shared: section heading ----------------------------------------- */
+
+.section-heading {
+  max-width: 42rem;
+  margin-bottom: 3rem;
+}
+.section-heading__eyebrow {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+.section-heading__title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+.section-heading__text {
+  margin-top: 1rem;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .section-heading__title {
+    font-size: 2.25rem;
+  }
+}
+
+/* --- Shared: card -------------------------------------------------- */
+
+.card {
+  border: 1px solid var(--color-border-soft);
+  border-radius: 1.5rem;
+  background: var(--color-surface);
+  padding: 1.5rem;
+}
+
+/* --- Shared: tag / chip ------------------------------------------ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 999px;
+  background: var(--color-bg-soft);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Shared: button -------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.btn--primary {
+  background: var(--color-heading);
+  color: var(--color-bg);
+  font-weight: 500;
+}
+.btn--primary:hover {
+  transform: scale(1.03);
+}
+.btn--ghost {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-heading);
+}
